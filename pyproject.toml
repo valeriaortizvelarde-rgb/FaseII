@@ -1,0 +1,31 @@
+[project]
+name = "busrag"
+version = "0.1.0"
+description = "RAG (Retrieval-Augmented Generation) sobre el catálogo BUI 2.0, usando FastAPI, OpenSearch y Azure OpenAI"
+authors = [{ name = "BUSRAG Team" }]
+requires-python = ">=3.11,<3.13"
+readme = "README.md"
+
+dependencies = [
+    "fastapi (>=0.115.0,<0.116.0)",
+    "uvicorn[standard] (>=0.30.0,<0.31.0)",
+    "opensearch-py (>=2.6.0,<3.0.0)",
+    "pydantic-settings (>=2.4.0,<3.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "openai (>=1.40.0,<2.0.0)",
+    "pandas (>=2.2.0,<3.0.0)",
+    "tqdm (>=4.66.0,<5.0.0)",
+    "requests (>=2.32.0,<3.0.0)",
+    "python-multipart (>=0.0.18,<0.1.0)",
+    "boto3 (>=1.35,<2.0)",
+]
+
+[tool.poetry]
+packages = [
+    { include = "application", from = "src" },
+    { include = "infrastructure", from = "src" },
+]
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
